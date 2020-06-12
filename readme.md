@@ -10,6 +10,7 @@ The following command is the recomended way of running it
 ```bash
 docker run --name unifi-controller \
     -p 8000:8443 \
+    -p 10001:10001 \
     --privileged \
     -v /sys/fs/cgroup:/sys/fs/cgroup:ro \
     -d andersballegaard/unifi-sdn-controller
