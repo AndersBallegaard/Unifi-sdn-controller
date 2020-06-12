@@ -17,6 +17,7 @@ docker run --name unifi-controller \
     -p 6789:6789 \
     --privileged \
     -v /sys/fs/cgroup:/sys/fs/cgroup:ro \
+    --restart=always \
     -d andersballegaard/unifi-sdn-controller
 ```
 
