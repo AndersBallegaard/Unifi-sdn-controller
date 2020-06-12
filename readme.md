@@ -1,4 +1,7 @@
 # Unifi Network Controller Docker image
+This is an unofficial docker image for unifi network controller
+
+Check it out on Docker Hub: https://hub.docker.com/r/andersballegaard/unifi-sdn-controller
 
 ## How to run
 Since the image use systemd this container needs to run as a priviledged container with access to cgroups. Remember to take manual backups once in a while.
