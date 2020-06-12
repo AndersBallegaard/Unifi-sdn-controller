@@ -4,13 +4,17 @@ This is an unofficial docker image for unifi network controller
 Check it out on Docker Hub: https://hub.docker.com/r/andersballegaard/unifi-sdn-controller
 
 ## How to run
-Since the image use systemd this container needs to run as a priviledged container with access to cgroups. Remember to take manual backups once in a while.
+Since the image use systemd this container needs to run as a priviledged container with access to cgroups. Remember to take manual backups once in a while. Note while testing this i needed to join AP's using SSH, L2 and L3 discovery should in theory work, but if it doesn't then try SSH.
 
 The following command is the recomended way of running it
 ```bash
 docker run --name unifi-controller \
+    -p 3478:3478/udp \
     -p 8000:8443 \
     -p 10001:10001 \
+    -p 1900:1900/udp \
+    -p 8080:8080 \
+    -p 6789:6789 \
     --privileged \
     -v /sys/fs/cgroup:/sys/fs/cgroup:ro \
     -d andersballegaard/unifi-sdn-controller
